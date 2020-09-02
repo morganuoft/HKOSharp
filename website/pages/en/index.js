@@ -60,13 +60,10 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
         <div className="inner">
           <ProjectTitle tagline={siteConfig.tagline} title={siteConfig.title} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href="https://github.com/ShingZhanho/HKOSharp">View On GitHub</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -92,73 +89,58 @@ class Index extends React.Component {
       </Container>
     );
 
-    const FeatureCallout = () => (
-      <div
-        className="productShowcaseSection paddingBottom"
-        style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
-      </div>
-    );
-
-    const TryOut = () => (
-      <Block id="try">
+    const QuickLinks = () => (
+      <Block layout="fourColumn">
         {[
           {
-            content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
-            image: `${baseUrl}img/undraw_code_review.svg`,
-            imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
+            title: '[Quick Start]()',
+            content: 'See some examples of using HKOSharp',
+            image: `${baseUrl}img/undraw_setup.svg`,
+            imageAlign: 'top',
+          },
+          {
+            title: '[Documentation]()',
+            content: 'Check usage of HKOSharp',
+            image: `${baseUrl}img/undraw_docs.svg`,
+            imageAlign: 'top',
+          },
+          {
+            title: '[Changlog]()',
+            content: 'See changes on different versions',
+            image: `${baseUrl}img/undraw_changelog.svg`,
+            imageAlign: 'top',
           },
         ]}
-      </Block>
+        </Block>
     );
 
-    const Description = () => (
-      <Block background="dark">
+    const WhyHKOSharp = () => (
+      <Block>
         {[
           {
             content:
-              'This is another description of how this project is useful',
-            image: `${baseUrl}img/undraw_note_list.svg`,
+              'HKOSharp does all HTTP requests and JSON stuffs for you. You don\'t ' +
+              'need to deal with those complicated things. Isn\'t that cool?',
+            image: `${baseUrl}img/undraw_import_and_use.svg`,
             imageAlign: 'right',
-            title: 'Description',
+            title: 'Why HKOSharp?',
           },
         ]}
       </Block>
     );
 
-    const LearnHow = () => (
+    const WhatIsHKOSharp = () => (
       <Block background="light">
         {[
           {
             content:
-              'Each new Docusaurus project has **randomly-generated** theme colors.',
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
-            imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
-          },
-        ]}
-      </Block>
-    );
-
-    const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
-          },
-          {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
+              'HKOSharp is a C# library which provids methods to access' +
+              'Hong Kong Observatory\'s Open Data API. ' +
+              'You should check **[Hong Kong Observatory\'s Official API documents]' +
+              '(https://www.hko.gov.hk/en/weatherAPI/doc/files/HKO_Open_Data_API_Documentation.pdf)**.',
+            image: `${baseUrl}img/undraw_what_is_this.svg`,
+            imageAlign: 'left',
+            title: 'What Is HKOSharp?',
           },
         ]}
       </Block>
@@ -198,12 +180,10 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase />
+          <QuickLinks />
+          <WhatIsHKOSharp />
+          <WhyHKOSharp />
+          
         </div>
       </div>
     );
